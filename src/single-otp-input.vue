@@ -1,5 +1,5 @@
 <template>
-  <div style="display: flex; align-items: center">
+  <div :class="wrapperClasses">
     <input
       :type="inputType"
       :placeholder="placeholder"
@@ -31,7 +31,7 @@ export default defineComponent({
   props: {
     inputType: {
       type: String,
-      default: "tel",
+      default: "text",
     },
     value: {
       type: [String, Number],
@@ -43,6 +43,9 @@ export default defineComponent({
       type: Boolean,
     },
     inputClasses: {
+      type: String,
+    },
+    wrapperClasses: {
       type: String,
     },
     shouldAutoFocus: {

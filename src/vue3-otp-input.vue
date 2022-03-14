@@ -21,6 +21,12 @@ export default /* #__PURE__ */ defineComponent({
       type: String,
       default: "**",
     },
+    outerWrapperClasses: {
+      type: String,
+    },
+    wrapperClasses: {
+      type: String,
+    },
     inputClasses: {
       type: String,
     },
@@ -171,7 +177,7 @@ export default /* #__PURE__ */ defineComponent({
 </script>
 
 <template>
-  <div style="display: flex">
+  <div :class="outerWrapperClasses">
     <!--    To turn off autocomplete when otp-input is password-->
     <input
       v-if="inputType === 'password'"
@@ -192,6 +198,7 @@ export default /* #__PURE__ */ defineComponent({
       :should-auto-focus="shouldAutoFocus"
       :placeholder="placeholder[i]"
       :is-disabled="isDisabled"
+      :wrapper-classes="wrapperClasses"
       @on-change="handleOnChange"
       @on-keydown="handleOnKeyDown"
       @on-paste="handleOnPaste"
