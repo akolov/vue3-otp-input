@@ -32,8 +32,6 @@ export default /* #__PURE__ */ defineComponent({
     },
     inputType: {
       type: String,
-      validator: (value: string) =>
-        ["number", "tel", "password"].includes(value),
     },
     shouldAutoFocus: {
       type: Boolean,
